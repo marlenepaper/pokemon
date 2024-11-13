@@ -1,0 +1,40 @@
+section{
+  position:fixed;
+  top:0;
+  left:0;
+  background:rgba(0,0,0,80%);
+  z-index:999;
+  width:100%;
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+    div{
+      background:white;
+      width:90%;
+      padding:2rem;
+      border-radius:2rem;
+      position:relative;
+
+      button{
+        background:none;
+        border-style:none;
+        position:absolute;
+        right:2rem;
+        top:1.5rem;
+        }
+
+      h2{
+        border-bottom:1px solid black;
+        }
+
+      img{
+        width:80%;
+        }
+
+      }
+
+
+
+  }
