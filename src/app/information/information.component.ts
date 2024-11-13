@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PokemonCard } from "../services/interfaces/PokemonCard";
 import {ModalVisibilityService} from "../services/modales/modal-visibility.service"
+import {ModalDataAssignService} from "../services/modales/modal-data-assign.service"
 
 @Component({
   selector: 'app-information',
@@ -18,17 +19,19 @@ export class InformationComponent implements OnInit{
   isModalDefaultVisible:boolean=false;
 
   constructor(
-      private modalVisibilityService: ModalVisibilityService
+      private modalVisibilityService: ModalVisibilityService,
+      private modalDataAssignService: ModalDataAssignService
 
   ){}
 
 ngOnInit() {
     this.modalVisibilityService.modalVisibilityState$.subscribe(visible => {
-      this.isModalDefaultVisible = visible;
+    this.isModalDefaultVisible = visible;
     });
   }
 
-  setModalVisibility(){
+  setModalVisibility(data:PokemonCard){
+    this.modalDataAssignService.assignDataToModal(data);
     this.modalVisibilityService.isModalVisible.next(true);
   }
 

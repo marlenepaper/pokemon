@@ -2,7 +2,7 @@
   <img src="{{pokemonCard.image_url}}" alt="">
   <h5>{{pokemonCard.name}}</h5>
   <p>{{pokemonCard.description}}</p>
-  <button type="button" (click)="setModalVisibility()">ver informacion</button>
+  <button type="button" (click)="setModalVisibility(pokemonCard)">ver informacion</button>
 </div>
 
 <app-modal *ngIf="isModalDefaultVisible"></app-modal>
